@@ -1,0 +1,66 @@
+.Ocupacion {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  text-align: center;
+  font-weight: normal;
+}
+
+.Nombre {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  text-align: center;
+}
+
+.Border {
+  width: 146px;
+  height: 146px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(to bottom, #6366f1, #3b82f6);
+}
+
+.Fotos {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Colaboradores {
+  display: flex;
+  justify-content: center;
+  gap: 280px;
+  margin-top: 40px;
+  font-family: Poppins, sans-serif;
+}
+
+.colab2 {
+  margin-top: 130px;
+}
+
+.mensaje {
+  color: white;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-weight: normal;
+}
+
+.CreditosImg {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.CreditosPage {
+  background-color: rgba(26, 26, 46);
+  min-height: 100vh; /* ocupa toda la pantalla */
+  padding: 20px;
+}

@@ -1,0 +1,125 @@
+.root {
+  background-color: rgba(245, 249, 255, 1);
+  height: 893px;
+  width: 1920px;
+}
+
+.Calculadora {
+  background-color: rgba(245, 249, 255, 1);
+  min-height: 100vh; /* ocupa toda la pantalla */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.PromedioCalculadoraTitulo {
+  height: 50px;
+  width: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 670px;
+}
+
+.calculadoraImg {
+  height: 200px;
+  width: 200px;
+  margin-left: 200px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.textoCalculadora {
+  margin-left: 300px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: black;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  width: fit-content;
+  height: 100px;
+}
+
+.notas h4 {
+  margin-bottom: 78px;
+  margin-right: 90px;
+  margin-left: -50px;
+}
+
+.Notas {
+  height: 230px;
+  width: 250px;
+  margin-bottom: 180px;
+  display: flex; /* Para que el contenido esté horizontal */
+  margin-left: 690px;
+}
+
+.inputNotas {
+  color: #007bff;
+  border-radius: 20px;
+  padding: 8px;
+  outline: none;
+  margin-right: 150px;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 250px;
+}
+
+.inputNotas input {
+  background: transparent;
+  color: #007bff;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  border-radius: 0;
+  padding: 8px 0;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 60px;
+  transition: border-color 0.3s;
+}
+
+.inputNotas input::placeholder {
+  color: rgb(54, 164, 247);
+  opacity: 1;
+}
+
+.inputNotas input:focus {
+  border-bottom: 2px solid #007bff; /* Color al enfocar */
+}
+
+.btnResultado {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #007bff; /* Color base del botón */
+  transition: box-shadow 0.3s ease-in-out; /* Transición suave */
+  margin-left: -205px;
+  margin-top: 200px;
+}
+
+.btnResultado:hover {
+  box-shadow: 0 6px 10px rgb(25, 130, 209);
+}
+
+.resultado {
+  margin-top: 25px;
+}
+
+.contenedorNotas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -120px;
+}
+
+h4 {
+  color: black;
+}
+
+input {
+  border: 2px solid blue;
+  border-radius: 10px;
+}
