@@ -1,7 +1,7 @@
 import { ActividadesPage } from "../../features/actividades/ActividadesPage";
 import { CalculadoraPage } from "../../features/calculadora/CalculadoraPage";
 import { CreditosPage } from "../../features/creditos/CreditosPage";
-import { EventosPage } from "../../features/eventos/EventosPage";
+import { Eventos } from "../../features/Eventos/Eventos";
 import { HomePage } from "../../features/home/HomePage";
 import { RecursosPage } from "../../features/recursos/RecursosPage";
 import { Header } from "../components/common/Header";
@@ -19,7 +19,7 @@ export const AppLayout = () => {
           <ActividadesPage />
         </SectionWrapper>
         <SectionWrapper id="events">
-          <EventosPage />
+          <Eventos/>
         </SectionWrapper>
         <SectionWrapper id="resources">
           <RecursosPage />
