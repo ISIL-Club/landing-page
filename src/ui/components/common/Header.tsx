@@ -1,52 +1,83 @@
 import { useState } from "react";
 import "./header.css";
-import { Link } from "react-router";
-import { IsilIconSvg } from "../../../assets/isil-icon/IsilIconSvg";
+import { useNavigate } from "react-router";
 
 const navLinks = [
   {
+    id: "about",
     label: "¿Qué hacemos?",
-    to: "/about",
+    to: "#about",
   },
   {
+    id: "activities",
     label: "Actividades",
-    to: "/activities",
+    to: "#activities",
   },
   {
+    id: "calculate-promedio",
     label: "Calculadora de promedios",
-    to: "/calculate-promedio",
+    to: "#calculate-promedio",
   },
   {
+    id: "events",
     label: "Eventos",
-    to: "/events",
+    to: "#events",
   },
   {
+    id: "resources",
     label: "Recursos para programadores",
-    to: "/resources",
+    to: "#resources",
   },
   {
+    id: "credits",
     label: "Créditos",
-    to: "/credits",
+    to: "#credits",
   },
 ];
 
 export const Header = () => {
+  const [activeSection, setActiveSection] = useState("home");
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const navigateToSection = (sectionId: string) => {
+    if (sectionId == "calculate-promedio") {
+      navigate("/calculadora");
+      return;
+    }
+
+    setOpen(false);
+    if (sectionId === "about") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("home");
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        setActiveSection(sectionId);
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setActiveSection("home");
+  };
+
   return (
     <header>
       <nav className="navbar">
         <div className="navbar-container">
-          <div className="navbar-logo">
-            <IsilIconSvg />
+          <div className="navbar-logo" onClick={scrollToTop} style={{ cursor: "pointer" }}>
+            <img src="icon/logo-isil.jpg" alt="ISIL" />
           </div>
 
-          <ul className={`navbar-links ${open ? "active" : ""}`}>
-            {navLinks.map(({ label, to }, i) => (
-              <Link key={i} to={to}>
-                {label}
-              </Link>
+          <nav className={`navbar-links ${open ? "active" : ""}`}>
+            {navLinks.map(({ label, id }) => (
+              <li onClick={() => navigateToSection(id)} key={id}>
+                <a className={activeSection === id ? "active-link" : ""}>{label}</a>
+              </li>
             ))}
-          </ul>
+          </nav>
 
           <button className="navbar-toggle" onClick={() => setOpen(!open)}>
             {open ? "✖" : "☰"}
