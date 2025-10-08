@@ -1,0 +1,136 @@
+
+.registro-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 400px;
+  max-width: 90%;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease forwards;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* === TITULOS Y TEXTOS === */
+.registro-panel h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.registro-panel p {
+  background: linear-gradient(135deg, #5b2cff, #4f7cff);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* === INPUTS === */
+.registro-panel input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.registro-panel input:focus {
+  border-color: #6a5af9;
+  box-shadow: 0 0 6px rgba(106, 90, 249, 0.3);
+}
+
+/* === BOTONES === */
+.registro-panel button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.registro-panel button[type="submit"] {
+  background: linear-gradient(135deg, #5b2cff, #4f7cff);
+  color: white;
+}
+
+.registro-panel button[type="submit"]:hover {
+  background: linear-gradient(135deg, #6b3fff, #5c8dff);
+}
+
+.registro-panel button[type="button"] {
+  margin-top: 0.8rem;
+  background: #f0f0f0;
+  color: #333;
+}
+
+.registro-panel button[type="button"]:hover {
+  background: #e5e5e5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+
+/* 🟢 Tablets (hasta 768px) */
+@media (max-width: 768px) {
+  .registro-panel {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .registro-panel h2 {
+    font-size: 1.2rem;
+  }
+
+  .registro-panel input,
+  .registro-panel button {
+    font-size: 0.95rem;
+  }
+}
+
+/* 🔵 Móviles (hasta 480px) */
+@media (max-width: 480px) {
+  .registro-panel {
+    width: 95%;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .registro-panel h2 {
+    font-size: 1rem;
+  }
+
+  .registro-panel p {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .registro-panel input,
+  .registro-panel button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
