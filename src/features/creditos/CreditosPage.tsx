@@ -1,4 +1,44 @@
+import React from "react";
 import styles from "./creditos.module.css";
+
+const colaboradores = [
+  {
+    nombre: "Rafael Acalá",
+    ocupacion: "UX/UI DESIGNER",
+    imagen: "/imagenes/RafaelAcala.jpg",
+    grupo: 1,
+  },
+  {
+    nombre: "Juan Yllanes",
+    ocupacion: "PROGRAMMER",
+    imagen: "/imagenes/JuanYllanes.png",
+    grupo: 1,
+  },
+  {
+    nombre: "Jair Castañeda",
+    ocupacion: "PROGRAMMER",
+    imagen: "/imagenes/JairCastañeda.jpg",
+    grupo: 1,
+  },
+  {
+    nombre: "Andy Chung",
+    ocupacion: "PROGRAMMER",
+    imagen: "/imagenes/AndyChung.jpeg",
+    grupo: 2,
+  },
+  {
+    nombre: "Juan Yllanes",
+    ocupacion: "PROGRAMMER",
+    imagen: "/imagenes/JuanYllanes.png",
+    grupo: 2,
+  },
+  {
+    nombre: "Jair Castañeda",
+    ocupacion: "PROGRAMMER",
+    imagen: "/imagenes/JairCastañeda.jpg",
+    grupo: 2,
+  },
+];
 
 export const CreditosPage = () => {
   return (
@@ -6,52 +46,33 @@ export const CreditosPage = () => {
       <div className={styles.CreditosImg}>
         <img src="/img/Creditos.png" alt="Créditos" />
       </div>
-
       <h4 className={styles.mensaje}>
         Este proyecto es desarrollado por estudiantes del ISIL Developers Club. Todo el contenido, herramientas y diseño web son realizados por y para{" "}
         <br />
         estudiantes. Nuestro objetivo es construir una comunidad donde todos puedan aprender, compartir y avanzar en su camino como desarrolladores.
       </h4>
-
       <div className={styles.Colaboradores}>
-        <div className={styles.Border}>
-          <img className={styles.Fotos} src="/img/RafaelAcala.jpg" alt="Rafael Acalá" />
-          <h4 className={styles.Ocupacion}>UX/UI DESIGNER</h4>
-          <h4 className={styles.Nombre}>Rafael Acalá</h4>
-        </div>
-
-        <div className={styles.Border}>
-          <img className={styles.Fotos} src="/img/JuanYllanes.png" alt="Juan Yllanes" />
-          <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
-          <h4 className={styles.Nombre}>Juan Yllanes</h4>
-        </div>
-
-        <div className={styles.Border}>
-          <img className={styles.Fotos} src="/img/JairCastañeda.jpg" alt="Jair Castañeda" />
-          <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
-          <h4 className={styles.Nombre}>Jair Castañeda</h4>
-        </div>
+        {colaboradores
+          .filter((colab) => colab.grupo === 1)
+          .map((colab) => (
+            <div className={styles.Border} key={colab.nombre + colab.grupo}>
+              <img className={styles.Fotos} src={colab.imagen} alt={colab.nombre} />
+              <h4 className={styles.Ocupacion}>{colab.ocupacion}</h4>
+              <h4 className={styles.Nombre}>{colab.nombre}</h4>
+            </div>
+          ))}
       </div>
-
       <div className={styles.colab2}>
         <div className={styles.Colaboradores}>
-          <div className={styles.Border}>
-            <img className={styles.Fotos} src="/img/AndyChung.jpeg" alt="Andy Chung" />
-            <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
-            <h4 className={styles.Nombre}>Andy Chung</h4>
-          </div>
-
-          <div className={styles.Border}>
-            <img className={styles.Fotos} src="/img/JuanYllanes.png" alt="Juan Yllanes" />
-            <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
-            <h4 className={styles.Nombre}>Juan Yllanes</h4>
-          </div>
-
-          <div className={styles.Border}>
-            <img className={styles.Fotos} src="/img/JairCastañeda.jpg" alt="Jair Castañeda" />
-            <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
-            <h4 className={styles.Nombre}>Jair Castañeda</h4>
-          </div>
+          {colaboradores
+            .filter((colab) => colab.grupo === 2)
+            .map((colab) => (
+              <div className={styles.Border} key={colab.nombre + colab.grupo}>
+                <img className={styles.Fotos} src={colab.imagen} alt={colab.nombre} />
+                <h4 className={styles.Ocupacion}>{colab.ocupacion}</h4>
+                <h4 className={styles.Nombre}>{colab.nombre}</h4>
+              </div>
+            ))}
         </div>
       </div>
     </div>
