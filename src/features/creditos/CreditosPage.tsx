@@ -4,7 +4,7 @@ export const CreditosPage = () => {
   return (
     <div className={styles.CreditosPage}>
       <div className={styles.CreditosImg}>
-        <img src="/imagenes/Creditos.png" alt="Créditos" />
+        <img src="/img/Creditos.png" alt="Créditos" />
       </div>
 
       <h4 className={styles.mensaje}>
@@ -15,19 +15,19 @@ export const CreditosPage = () => {
 
       <div className={styles.Colaboradores}>
         <div className={styles.Border}>
-          <img className={styles.Fotos} src="/imagenes/RafaelAcala.jpg" alt="Rafael Acalá" />
+          <img className={styles.Fotos} src="/img/RafaelAcala.jpg" alt="Rafael Acalá" />
           <h4 className={styles.Ocupacion}>UX/UI DESIGNER</h4>
           <h4 className={styles.Nombre}>Rafael Acalá</h4>
         </div>
 
         <div className={styles.Border}>
-          <img className={styles.Fotos} src="/imagenes/JuanYllanes.png" alt="Juan Yllanes" />
+          <img className={styles.Fotos} src="/img/JuanYllanes.png" alt="Juan Yllanes" />
           <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
           <h4 className={styles.Nombre}>Juan Yllanes</h4>
         </div>
 
         <div className={styles.Border}>
-          <img className={styles.Fotos} src="/imagenes/JairCastañeda.jpg" alt="Jair Castañeda" />
+          <img className={styles.Fotos} src="/img/JairCastañeda.jpg" alt="Jair Castañeda" />
           <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
           <h4 className={styles.Nombre}>Jair Castañeda</h4>
         </div>
@@ -36,19 +36,19 @@ export const CreditosPage = () => {
       <div className={styles.colab2}>
         <div className={styles.Colaboradores}>
           <div className={styles.Border}>
-            <img className={styles.Fotos} src="/imagenes/AndyChung.jpeg" alt="Andy Chung" />
+            <img className={styles.Fotos} src="/img/AndyChung.jpeg" alt="Andy Chung" />
             <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
             <h4 className={styles.Nombre}>Andy Chung</h4>
           </div>
 
           <div className={styles.Border}>
-            <img className={styles.Fotos} src="/imagenes/JuanYllanes.png" alt="Juan Yllanes" />
+            <img className={styles.Fotos} src="/img/JuanYllanes.png" alt="Juan Yllanes" />
             <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
             <h4 className={styles.Nombre}>Juan Yllanes</h4>
           </div>
 
           <div className={styles.Border}>
-            <img className={styles.Fotos} src="/imagenes/JairCastañeda.jpg" alt="Jair Castañeda" />
+            <img className={styles.Fotos} src="/img/JairCastañeda.jpg" alt="Jair Castañeda" />
             <h4 className={styles.Ocupacion}>PROGRAMMER</h4>
             <h4 className={styles.Nombre}>Jair Castañeda</h4>
           </div>

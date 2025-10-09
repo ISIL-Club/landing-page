@@ -24,7 +24,7 @@ export const CalculadoraPage = () => {
   return (
     <div className={styles.Calculadora}>
       <div>
-        <img className={styles.PromedioCalculadoraTitulo} src="/imagenes/image-removebg-preview.png" alt="" />
+        <img className={styles.PromedioCalculadoraTitulo} src="/img/image-removebg-preview.png" alt="" />
       </div>
 
       <div className={styles.textoCalculadora}>
@@ -35,7 +35,7 @@ export const CalculadoraPage = () => {
           disponible para toda la comunidad ISIL.
         </h4>
 
-        <img className={styles.calculadoraImg} src="/imagenes/calculadora.png" alt="" />
+        <img className={styles.calculadoraImg} src="/img/calculadora.png" alt="" />
 
         <button className={styles.btnResultado} onClick={calcularPromedio}>
           Calcular Promedio

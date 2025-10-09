@@ -18,6 +18,9 @@ export const AppLayout = () => {
         <SectionWrapper id="activities">
           <ActividadesPage />
         </SectionWrapper>
+        <SectionWrapper id="calculadora">
+          <CalculadoraPage/>
+        </SectionWrapper>
         <SectionWrapper id="events">
           <Eventos/>
         </SectionWrapper>
