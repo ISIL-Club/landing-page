@@ -44,7 +44,7 @@ export const CreditosPage = () => {
   return (
     <div className={styles.CreditosPage}>
       <div className={styles.CreditosImg}>
-        <img src="/imagenes/Creditos.png" alt="Créditos" />
+        <img src="/img/Creditos.png" alt="Créditos" />
       </div>
       <h4 className={styles.mensaje}>
         Este proyecto es desarrollado por estudiantes del ISIL Developers Club. Todo el contenido, herramientas y diseño web son realizados por y para{" "}
