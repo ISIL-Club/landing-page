@@ -5,37 +5,37 @@ const colaboradores = [
   {
     nombre: "Rafael Acalá",
     ocupacion: "UX/UI DESIGNER",
-    imagen: "/imagenes/RafaelAcala.jpg",
+    imagen: "/img/RafaelAcala.jpg",
     grupo: 1,
   },
   {
     nombre: "Juan Yllanes",
     ocupacion: "PROGRAMMER",
-    imagen: "/imagenes/JuanYllanes.png",
+    imagen: "/img/JuanYllanes.png",
     grupo: 1,
   },
   {
     nombre: "Jair Castañeda",
     ocupacion: "PROGRAMMER",
-    imagen: "/imagenes/JairCastañeda.jpg",
+    imagen: "/img/JairCastañeda.jpg",
     grupo: 1,
   },
   {
     nombre: "Andy Chung",
     ocupacion: "PROGRAMMER",
-    imagen: "/imagenes/AndyChung.jpeg",
+    imagen: "/img/AndyChung.jpeg",
     grupo: 2,
   },
   {
     nombre: "Juan Yllanes",
     ocupacion: "PROGRAMMER",
-    imagen: "/imagenes/JuanYllanes.png",
+    imagen: "/img/JuanYllanes.png",
     grupo: 2,
   },
   {
     nombre: "Jair Castañeda",
     ocupacion: "PROGRAMMER",
-    imagen: "/imagenes/JairCastañeda.jpg",
+    imagen: "/img/JairCastañeda.jpg",
     grupo: 2,
   },
 ];
