@@ -1,13 +1,18 @@
 import { useState } from "react";
 
 import styles from "./calculadora.module.css";
+import { useNavigate } from "react-router";
 
 export const CalculadoraPage = () => {
-  const [pa1, setPa1] = useState("");
-  const [pa2, setPa2] = useState("");
-  const [pa3, setPa3] = useState("");
-  const [pa4, setPa4] = useState("");
-  const [examenFinal, setExamenFinal] = useState("");
+  const navigate = useNavigate();
+  const [notas, setNotas] = useState({
+    pa1: "",
+    pa2: "",
+    pa3: "",
+    pa4: "",
+    examenFinal: "",
+  });
+  const { examenFinal, pa1, pa2, pa3, pa4 } = notas;
   const [promedio, setPromedio] = useState(null);
 
   const calcularPromedio = () => {
@@ -21,48 +26,73 @@ export const CalculadoraPage = () => {
     setPromedio(resultado.toFixed(1));
   };
 
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    if (value >= 20) {
+      setNotas({ ...notas, [name]: 20 });
+      return;
+    }
+    setNotas({ ...notas, [name]: value });
+  };
+
+  const onBackNavigate = () => {
+    navigate("/", { replace: true });
+  };
+
   return (
-    <div className={styles.Calculadora}>
-      <div>
-        <img className={styles.PromedioCalculadoraTitulo} src="/img/image-removebg-preview.png" alt="" />
-      </div>
-
-      <div className={styles.textoCalculadora}>
-        <h4>
-          Una herramienta sencilla para que cualquier estudiante de ISIL pueda <br />
-          calcular su promedio del ciclo. Accesible desde cualquier dispositivo,
-          <br />
-          disponible para toda la comunidad ISIL.
-        </h4>
-
-        <img className={styles.calculadoraImg} src="/img/calculadora.png" alt="" />
-
-        <button className={styles.btnResultado} onClick={calcularPromedio}>
-          Calcular Promedio
-        </button>
-      </div>
-
-      <div className={styles.contenedorNotas}>
-        <div className={styles.Notas}>
-          <div className={styles.notas}>
-            <h4>PA1:</h4>
-            <h4>PA2:</h4>
-            <h4>PA3:</h4>
-            <h4>PA4:</h4>
-            <h4>Examen Integral:</h4>
-            <h4>Promedio:</h4>
+    <>
+      <header>
+        <nav className="navbar">
+          <div className="navbar-container">
+            <div className="navbar-logo" onClick={onBackNavigate} style={{ cursor: "pointer" }}>
+              <img src="icon/logo-isil.jpg" alt="ISIL" />
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main className={styles.main}>
+        <h1>Calculadora de promedios/</h1>
+        <section className={styles.section}>
+          <div className={styles.content}>
+            <p>
+              Una herramienta sencilla para que cualquier estudiante de ISIL pueda <br />
+              calcular su promedio del ciclo. Accesible desde cualquier dispositivo, <br />
+              disponible para toda la comunidad ISIL.
+            </p>
+            <div>
+              <img className="img-fluid" style={{ width: 280 }} src="/img/calculadora.png" alt="" />
+            </div>
+            <button onClick={calcularPromedio}>Calcular Promedio</button>
           </div>
 
-          <div className={styles.inputNotas}>
-            <input type="number" value={pa1} onChange={(e) => setPa1(e.target.value)} placeholder="Ingrese nota PA1" />
-            <input type="number" value={pa2} onChange={(e) => setPa2(e.target.value)} placeholder="Ingrese nota PA2" />
-            <input type="number" value={pa3} onChange={(e) => setPa3(e.target.value)} placeholder="Ingrese nota PA3" />
-            <input type="number" value={pa4} onChange={(e) => setPa4(e.target.value)} placeholder="Ingrese nota PA4" />
-            <input type="number" value={examenFinal} onChange={(e) => setExamenFinal(e.target.value)} placeholder="Ingrese nota Examen Integral" />
-            {promedio !== null && <div className={styles.resultado}>Promedio: {promedio}</div>}
-          </div>
-        </div>
-      </div>
-    </div>
+          <form className={styles.formCalc} onSubmit={(e) => e.preventDefault()}>
+            <div>
+              <label>PA1</label>
+              <input name="pa1" type="number" value={pa1} onChange={handleInput} max={20} min={0} step="any" inputMode="decimal" />
+            </div>
+            <div>
+              <label>PA2</label>
+              <input name="pa2" type="number" value={pa2} onChange={handleInput} max={20} min={0} step="any" inputMode="decimal" />
+            </div>
+            <div>
+              <label>PA3</label>
+              <input name="pa3" type="number" value={pa3} onChange={handleInput} max={20} min={0} step="any" inputMode="decimal" />
+            </div>
+            <div>
+              <label>PA4</label>
+              <input name="pa4" type="number" value={pa4} onChange={handleInput} max={20} min={0} step="any" inputMode="decimal" />
+            </div>
+            <div>
+              <label>Evaluación Final</label>
+              <input name="examenFinal" type="number" value={examenFinal} onChange={handleInput} max={20} min={0} step="any" inputMode="decimal" />
+            </div>
+            <div>
+              <label>Promedio</label>
+              <input name="promedio" type="text" value={promedio ?? ""} readOnly />
+            </div>
+          </form>
+        </section>
+      </main>
+    </>
   );
 };

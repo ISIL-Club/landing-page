@@ -1,5 +1,5 @@
-import './eventostabla.css';
-import React, {useState} from "react";
+import "./eventostabla.css";
+import { useState } from "react";
 import { PanelRegistro } from "./PanelRegistro";
 
 export const TodosEventos = ({ events, volver }) => {
@@ -11,17 +11,17 @@ export const TodosEventos = ({ events, volver }) => {
     setMostrarRegistro(true)
   }*/
   const abrirRegistro = (evento) => {
-  console.log("Evento seleccionado:", evento); // 👈 Mira aquí el id real
-  setEventoSeleccionado(evento);
-  setMostrarRegistro(true);
-};
-  
-   const cerrarRegistro = () => {
+    console.log("Evento seleccionado:", evento); // 👈 Mira aquí el id real
+    setEventoSeleccionado(evento);
+    setMostrarRegistro(true);
+  };
+
+  const cerrarRegistro = () => {
     setMostrarRegistro(false);
     setEventoSeleccionado(null);
     document.body.style.overflow = ""; // restaurar scroll
   };
-  
+
   return (
     <div className="body2">
       <section className="second2">
@@ -46,27 +46,22 @@ export const TodosEventos = ({ events, volver }) => {
                 <p>{evento.link}</p>
                 <p>{evento.organizador}</p>
                 <p>{evento.descripcion}</p>
-                
               </div>
 
-              <button className="btn-register" 
-              onClick={() => abrirRegistro(evento)}>Registrate Ahora</button>
-
+              <button className="btn-register" onClick={() => abrirRegistro(evento)}>
+                Registrate Ahora
+              </button>
             </div>
-    
           ))}
-          
         </div>
-          <button className="events-btn2" onClick={volver}>
-            Volver
-          </button>
+        <button className="events-btn2" onClick={volver}>
+          Volver
+        </button>
       </section>
 
-        {/* Render del panel: si mostrarRegistro es true se monta el componente PanelRegistro */}
-      
-      {mostrarRegistro && ( <PanelRegistro evento={eventoSeleccionado} cerrar={cerrarRegistro} />
-      )}
-      
+      {/* Render del panel: si mostrarRegistro es true se monta el componente PanelRegistro */}
+
+      {mostrarRegistro && <PanelRegistro evento={eventoSeleccionado} cerrar={cerrarRegistro} />}
     </div>
   );
 };

@@ -54,7 +54,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.img-fluid{
 
+  height: 100%;
+}
 
 .section-wrapper {
   min-height: calc(100svh - 80px);

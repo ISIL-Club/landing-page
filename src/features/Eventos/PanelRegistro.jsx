@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./panel.css";
 
 export const PanelRegistro = ({ cerrar, evento }) => {
@@ -7,7 +7,6 @@ export const PanelRegistro = ({ cerrar, evento }) => {
   const [telefono, setTelefono] = useState("");
   const [cerrando, setCerrando] = useState(false);
 
- 
   useEffect(() => {
     document.body.classList.add("modal-abierto");
     return () => document.body.classList.remove("modal-abierto");
@@ -16,7 +15,6 @@ export const PanelRegistro = ({ cerrar, evento }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
     const datos = {
       nombre: nombres,
       correo,
@@ -31,14 +29,11 @@ export const PanelRegistro = ({ cerrar, evento }) => {
     try {
       console.log("Enviando datos a la API:", datos);
 
-      const res = await fetch(
-        `https://isildevs.cesarpreciado.com/api/events/${evento.id}/attend`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(datos),
-        }
-      );
+      const res = await fetch(`https://isildevs.cesarpreciado.com/api/events/${evento.id}/attend`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(datos),
+      });
 
       if (res.ok) {
         alert("¡Registro exitoso!");
@@ -68,26 +63,9 @@ export const PanelRegistro = ({ cerrar, evento }) => {
       </p>
 
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Nombre completo"
-          value={nombres}
-          onChange={(e) => setNombres(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={correo}
-          onChange={(e) => setCorreo(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Teléfono (opcional)"
-          value={telefono}
-          onChange={(e) => setTelefono(e.target.value)}
-        />
+        <input type="text" placeholder="Nombre completo" value={nombres} onChange={(e) => setNombres(e.target.value)} required />
+        <input type="email" placeholder="Correo electrónico" value={correo} onChange={(e) => setCorreo(e.target.value)} required />
+        <input type="text" placeholder="Teléfono (opcional)" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
 
         <button type="submit">Enviar Registro</button>
       </form>
@@ -98,13 +76,3 @@ export const PanelRegistro = ({ cerrar, evento }) => {
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-

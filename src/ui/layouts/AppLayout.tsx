@@ -1,5 +1,4 @@
 import { ActividadesPage } from "../../features/actividades/ActividadesPage";
-import { CalculadoraPage } from "../../features/calculadora/CalculadoraPage";
 import { CreditosPage } from "../../features/creditos/CreditosPage";
 import { Eventos } from "../../features/Eventos/Eventos";
 import { HomePage } from "../../features/home/HomePage";
@@ -18,11 +17,13 @@ export const AppLayout = () => {
         <SectionWrapper id="activities">
           <ActividadesPage />
         </SectionWrapper>
-        <SectionWrapper id="calculadora">
+        {/*   
+       No agregar esto aqui, está tendra su propia pagina (IsilApplication.jsx)
+      <SectionWrapper id="calculadora">
           <CalculadoraPage/>
-        </SectionWrapper>
+        </SectionWrapper> */}
         <SectionWrapper id="events">
-          <Eventos/>
+          <Eventos />
         </SectionWrapper>
         <SectionWrapper id="resources">
           <RecursosPage />

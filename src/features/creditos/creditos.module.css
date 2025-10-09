@@ -1,72 +1,91 @@
+.ColaboradoresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 40px;
+  justify-items: center;
+  align-items: stretch;
+  margin-top: 40px;
+  font-family: Poppins, sans-serif;
+}
+
+.CardColaborador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: transform 0.2s;
+  width: 190px;
+}
+.CardColaborador:hover {
+  transform: translateY(-6px) scale(1.04);
+}
+
+.FotoWrapper {
+  width: 146px;
+  height: 146px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #6366f1, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Fotos {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff2;
+}
+
 .Ocupacion {
-  color: #fff;
+  color: #bcf;
   font-family: Poppins, sans-serif;
   text-align: center;
-  font-weight: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 6px 0 0 0;
 }
 
 .Nombre {
   color: #fff;
   font-family: Poppins, sans-serif;
   text-align: center;
+  font-size: 1.03rem;
+  margin: 3px 0 0 0;
 }
 
-.Border {
-  width: 146px;
-  height: 146px;
-  border-radius: 50%;
-  padding: 8px;
-  background: linear-gradient(to bottom, #6366f1, #3b82f6);
-}
-
-.Fotos {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.Colaboradores {
-  display: flex;
-  justify-content: center;
-  gap: 280px;
-  margin-top: 40px;
-  font-family: Poppins, sans-serif;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 1200px) {
-  .Colaboradores {
-    gap: 100px;
+@media (max-width: 1100px) {
+  .ColaboradoresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
   }
 }
 
-@media (max-width: 900px) {
-  .Colaboradores {
-    gap: 50px;
-    flex-direction: column;
-    align-items: center;
-  }
-  .colab2 {
-    margin-top: 60px;
-  }
-}
-
-@media (max-width: 600px) {
-  .Colaboradores {
+@media (max-width: 700px) {
+  .ColaboradoresGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
     gap: 24px;
-    margin-top: 24px;
-    flex-direction: column;
-    align-items: center;
   }
-  .CreditosImg img {
+  .CardColaborador {
+    width: 98%;
+    max-width: 350px;
+    padding: 16px 6px 12px 6px;
+  }
+  .FotoWrapper {
     width: 100px;
-    height: auto;
-  }
-  .Border {
-    width: 96px;
-    height: 96px;
+    height: 100px;
     padding: 4px;
+  }
+  .Fotos {
+    width: 88px;
+    height: 88px;
   }
 }
 
