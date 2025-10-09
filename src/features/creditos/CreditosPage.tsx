@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./creditos.module.css";
 
 const colaboradores = [

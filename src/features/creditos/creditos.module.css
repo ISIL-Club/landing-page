@@ -7,6 +7,9 @@
   align-items: stretch;
   margin-top: 40px;
   font-family: Poppins, sans-serif;
+  
+  background-color: rgba(26, 26, 46);
+  height: 100%;
 }
 
 .CardColaborador {
@@ -71,6 +74,7 @@
   .ColaboradoresGrid {
     grid-template-columns: 1fr;
     grid-template-rows: none;
+
     gap: 24px;
   }
   .CardColaborador {
@@ -117,6 +121,6 @@
 .CreditosPage {
   background-color: rgba(26, 26, 46);
  height: 100%;
- overflow: hidden;
-  padding: 20px;
+
+
 }
