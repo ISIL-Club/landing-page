@@ -5,6 +5,7 @@
     padding-top: 79px;
 }
 
+
 .home-container {
     max-width: 1200px;
     width: 90%;
@@ -63,5 +64,7 @@
 
     .home-text p {
         font-size: 14px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }

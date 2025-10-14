@@ -22,9 +22,9 @@ const colaboradores = [
     imagen: "/img/AndyChung.jpeg",
   },
   {
-    nombre: "Juan Yllanes",
+    nombre: "Ana Rivas",
     ocupacion: "PROGRAMMER",
-    imagen: "/img/JuanYllanes.png",
+    imagen: "/img/AnaRivas.jpg",
   },
   {
     nombre: "Jair Castañeda",
