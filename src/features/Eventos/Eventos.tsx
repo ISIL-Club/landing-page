@@ -39,13 +39,13 @@ export const Eventos = () => {
         </p>
       </section>
 
-      {/* 
+      {/*
       <section className="second">
         <h2 id='reu'>Reuniones</h2>
         {events.map(eventos => (
           <div className="re-back" key={eventos.id}>
             <div className="re-date">
-              <strong>{formatDate(eventos.fecha)}</strong> 
+              <strong>{formatDate(eventos.fecha)}</strong>
             </div>
             <div className="re-info">
               <h3>{eventos.nombre}</h3>
