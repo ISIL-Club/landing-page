@@ -101,9 +101,11 @@
   color: white;
   justify-content: center;
   display: flex;
-  text-align: center;
   font-family: Poppins, sans-serif;
   font-weight: normal;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
 }
 
 .CreditosImg {
@@ -111,6 +113,7 @@
   justify-content: center;
   height: 100px;
   width: auto;
+  margin-top: 40px;
 }
 
 .content {
@@ -123,4 +126,7 @@
  height: 100%;
 
 
+
 }
+
+
