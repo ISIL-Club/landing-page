@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { GraduationCap, Badge, FileText, Wrench } from "lucide-react";
 import "./RecursosPage.css";
@@ -36,18 +35,13 @@ export const RecursosPage: React.FC = () => {
       </h1>
 
       <p className="recursos-description">
-        Ofrecemos acceso y recomendaciones a cursos gratuitos, certificaciones,
-        recursos útiles, artículos y herramientas para ayudarte a crecer como
+        Ofrecemos acceso y recomendaciones a cursos gratuitos, certificaciones, recursos útiles, artículos y herramientas para ayudarte a crecer como
         desarrollador.
       </p>
 
       <div className="recursos-grid">
         {recursos.map((item, index) => (
-          <div
-            key={index}
-            className="recurso-card"
-            onClick={() => navigate(item.route)}
-          >
+          <div key={index} className="recurso-card" onClick={() => navigate(item.route)}>
             <div className="recurso-icon">{item.icon}</div>
             <p className="recurso-title">{item.title}</p>
           </div>

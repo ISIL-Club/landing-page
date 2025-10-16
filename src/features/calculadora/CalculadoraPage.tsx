@@ -60,7 +60,7 @@ export const CalculadoraPage = () => {
               disponible para toda la comunidad ISIL.
             </p>
             <div>
-              <img className="img-fluid" style={{ width: 280 }} src="/img/calculadora.png" alt="" />
+              <img className="img-fluid" style={{ width: 280 }} src="img/calculadora.png" alt="" />
             </div>
             <button onClick={calcularPromedio}>Calcular Promedio</button>
           </div>
