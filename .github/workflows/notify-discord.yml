@@ -1,4 +1,4 @@
-name: Notificar todo a Discord
+name: Notificar eventos a Discord
 
 on:
   push:
@@ -14,7 +14,31 @@ jobs:
     steps:
       - name: Enviar evento a Discord
         run: |
+          EVENT_TYPE="${{ github.event_name }}"
+          REPO="${{ github.repository }}"
+          ACTOR="${{ github.actor }}"
+          MESSAGE="${{ github.event.head_commit.message }}"
+          URL="${{ github.event.head_commit.url }}"
+
+          PAYLOAD=$(jq -n \
+            --arg title "📦 Nuevo evento en $REPO" \
+            --arg type "$EVENT_TYPE" \
+            --arg actor "$ACTOR" \
+            --arg message "$MESSAGE" \
+            --arg url "$URL" \
+            --arg color "5814783" \
+            '{
+              embeds: [
+                {
+                  title: $title,
+                  description: "**Tipo:** " + $type + "\n**Autor:** " + $actor + "\n**Mensaje:** " + $message,
+                  url: $url,
+                  color: ($color | tonumber)
+                }
+              ]
+            }')
+
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d "{\"content\": \"📢 Evento recibido: **${{ github.event_name }}** en el repo *${{ github.repository }}* por **${{ github.actor }}**\"}" \
+               -d "$PAYLOAD" \
                ${{ secrets.DISCORD_WEBHOOK }}
