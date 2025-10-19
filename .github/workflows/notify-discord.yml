@@ -45,7 +45,7 @@ jobs:
             --arg role "<@&${ROLE_ID}>" \
             --argjson color $COLOR \
             '{
-              content: "🔔 **Notificación automática:** \($role)",
+              content: "🔔 **Nuevo evento detectado:** \($role)",
               allowed_mentions: { parse: ["roles"] },
               embeds: [
                 {
