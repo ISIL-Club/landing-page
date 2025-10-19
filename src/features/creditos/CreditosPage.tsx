@@ -28,7 +28,7 @@ const colaboradores = [
   },
   {
     nombre: "TU TERROR GAAA",
-    ocupacion: "PROGRAMMER",
+    ocupacion: "SE BUSCA, POSIBLE AMENAZA CONTRA LA SOCIEDAD",
     imagen: "img/JairCastañeda.jpg",
   },
 ];
