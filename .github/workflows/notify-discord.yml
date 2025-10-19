@@ -23,24 +23,27 @@ jobs:
 
           # Elegir emoji según el tipo de evento
           case "$EVENT_TYPE" in
-            push)        ICON="📦"; TITLE="Nuevo *push* en el repositorio" ;;
-            pull_request) ICON="🔀"; TITLE="Se creó o actualizó un *Pull Request*" ;;
-            issues)      ICON="🐛"; TITLE="Actividad en *Issues*" ;;
-            release)     ICON="🏷️"; TITLE="Nueva *Release* publicada" ;;
-            fork)        ICON="🍴"; TITLE="Alguien hizo un *Fork* del repo" ;;
-            watch)       ICON="⭐"; TITLE="Nuevo *Star* en el proyecto" ;;
-            *)           ICON="📣"; TITLE="Nuevo evento detectado" ;;
+            push)        ICON="📦"; COLOR=3447003 ;;       # Azul
+            pull_request) ICON="🔀"; COLOR=10181046 ;;      # Morado
+            issues)      ICON="🐛"; COLOR=15158332 ;;       # Rojo
+            release)     ICON="🏷️"; COLOR=15844367 ;;      # Dorado
+            fork)        ICON="🍴"; COLOR=3066993 ;;        # Verde
+            watch)       ICON="⭐"; COLOR=16776960 ;;        # Amarillo
+            *)           ICON="📣"; COLOR=5814783 ;;        # Gris
           esac
+
+          # Construir título con el emoji y nombre del repo
+          TITLE="$ICON Nuevo evento en $REPO"
 
           # Construir el payload JSON con jq
           PAYLOAD=$(jq -n \
-            --arg title "$ICON $TITLE" \
+            --arg title "$TITLE" \
             --arg type "$EVENT_TYPE" \
             --arg actor "$ACTOR" \
             --arg message "$MESSAGE" \
             --arg url "$URL" \
             --arg role "<@&${ROLE_ID}>" \
-            --argjson color 5814783 \
+            --argjson color $COLOR \
             '{
               content: "🔔 **Notificación automática:** \($role)",
               allowed_mentions: { parse: ["roles"] },
