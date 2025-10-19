@@ -8,7 +8,7 @@ const colaboradores = [
   },
   {
     nombre: "Juan Yllanes",
-    ocupacion: "EL ULTIMO CACHUDO",
+    ocupacion: "PROGRAMER",
     imagen: "img/JuanYllanes.png",
   },
   {
@@ -18,7 +18,7 @@ const colaboradores = [
   },
   {
     nombre: "Andy Chung",
-    ocupacion: "PEDOFILO EN POTENCIA GAAA",
+    ocupacion: "PROGRAMMER",
     imagen: "img/AndyChung.jpeg",
   },
   {
