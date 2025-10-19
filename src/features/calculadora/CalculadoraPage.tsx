@@ -45,7 +45,7 @@ export const CalculadoraPage = () => {
         <nav className="navbar">
           <div className="navbar-container">
             <div className="navbar-logo" onClick={onBackNavigate} style={{ cursor: "pointer" }}>
-              <img src="icon/logo-isil.jpg" alt="ISIL" />
+              <img src="/icon/logo-isil.jpg" alt="ISIL" />
             </div>
           </div>
         </nav>

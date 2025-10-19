@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./ui/layouts/AppLayout";
 import { CalculadoraPage } from "./features/calculadora/CalculadoraPage";
 import { isDevelopment } from "./utils/isDevelopment";
@@ -11,6 +11,7 @@ export const IsilApplication = () => {
         <Routes>
           <Route path="/" element={<AppLayout />} />
           <Route path="/calculadora" element={<CalculadoraPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </>

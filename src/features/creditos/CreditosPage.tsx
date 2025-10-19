@@ -4,32 +4,32 @@ const colaboradores = [
   {
     nombre: "Rafael Acalá",
     ocupacion: "UX/UI DESIGNER",
-    imagen: "/img/RafaelAcala.jpg",
+    imagen: "img/RafaelAcala.jpg",
   },
   {
     nombre: "Juan Yllanes",
     ocupacion: "PROGRAMMER",
-    imagen: "/img/JuanYllanes.png",
+    imagen: "img/JuanYllanes.png",
   },
   {
     nombre: "Jair Castañeda",
     ocupacion: "PROGRAMMER",
-    imagen: "/img/JairCastañeda.jpg",
+    imagen: "img/JairCastañeda.jpg",
   },
   {
     nombre: "Andy Chung",
     ocupacion: "PROGRAMMER",
-    imagen: "/img/AndyChung.jpeg",
+    imagen: "img/AndyChung.jpeg",
   },
   {
-    nombre: "Juan Yllanes",
+    nombre: "Ana Rivas",
     ocupacion: "PROGRAMMER",
-    imagen: "/img/JuanYllanes.png",
+    imagen: "img/AnaRivas.jpg",
   },
   {
     nombre: "Jair Castañeda",
     ocupacion: "PROGRAMMER",
-    imagen: "/img/JairCastañeda.jpg",
+    imagen: "img/JairCastañeda.jpg",
   },
 ];
 
@@ -37,7 +37,7 @@ export const CreditosPage = () => {
   return (
     <div className={styles.CreditosPage}>
       <div className={styles.CreditosImg}>
-        <img src="/img/Creditos.png" alt="Créditos" />
+        <img src="img/Creditos.png" alt="Créditos" />
       </div>
       <h4 className={styles.mensaje}>
         Este proyecto es desarrollado por estudiantes del ISIL Developers Club. Todo el contenido, herramientas y diseño web son realizados por y para{" "}
