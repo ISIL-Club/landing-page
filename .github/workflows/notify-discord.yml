@@ -31,7 +31,7 @@ jobs:
             --arg role "<@&${ROLE_ID}>" \
             --argjson color 5814783 \
             '{
-              content: "\($role) 🚨 Nuevo evento detectado:",
+              content: "🚨 Nuevo evento detectado: \($role)",
               allowed_mentions: { parse: ["roles"] },
               embeds: [
                 {
