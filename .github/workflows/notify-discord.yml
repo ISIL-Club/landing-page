@@ -1,0 +1,20 @@
+name: Notificar todo a Discord
+
+on:
+  push:
+  pull_request:
+  issues:
+  release:
+  fork:
+  watch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar evento a Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"📢 Evento recibido: **${{ github.event_name }}** en el repo *${{ github.repository }}* por **${{ github.actor }}**\"}" \
+               ${{ secrets.DISCORD_WEBHOOK }}
