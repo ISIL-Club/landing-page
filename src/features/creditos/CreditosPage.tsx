@@ -28,7 +28,7 @@ const colaboradores = [
   },
   {
     nombre: "Matt Castillo",
-    ocupacion: "DIBUJITO EN ACCION",
+    ocupacion: "DIBUJITO GAAA",
     imagen: "img/matt.png",
   },
 ];
