@@ -1,7 +1,7 @@
 import "./recursos.css";
 
 
-//PRUEBA DE CONEXION A DISCORD
+//PRUEBA DE CONEXION A DISCORD1
 const recursosIcons: { linkIcon: string; descripcion: string; linkRef: string }[] = [
     {
         descripcion: "Cursos Gratuitos",
