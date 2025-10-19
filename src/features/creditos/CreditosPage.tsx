@@ -27,7 +27,7 @@ const colaboradores = [
     imagen: "img/AnaRivas.jpg",
   },
   {
-    nombre: "Jair Castañeda",
+    nombre: "TU TERROR GAAA",
     ocupacion: "PROGRAMMER",
     imagen: "img/JairCastañeda.jpg",
   },
