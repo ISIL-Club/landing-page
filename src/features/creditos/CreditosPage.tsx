@@ -8,7 +8,7 @@ const colaboradores = [
   },
   {
     nombre: "Juan Yllanes",
-    ocupacion: "PROGRAMMER",
+    ocupacion: "PROGRAMER",
     imagen: "img/JuanYllanes.png",
   },
   {
@@ -27,9 +27,9 @@ const colaboradores = [
     imagen: "img/AnaRivas.jpg",
   },
   {
-    nombre: "TU TERROR GAAA...",
-    ocupacion: "PROGRAMMER",
-    imagen: "img/JairCastañeda.jpg",
+    nombre: "Matt Castillo",
+    ocupacion: "DIBUJITO EN ACCION",
+    imagen: "img/matt.png",
   },
 ];
 

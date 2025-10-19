@@ -17,28 +17,34 @@ jobs:
           EVENT_TYPE="${{ github.event_name }}"
           REPO="${{ github.repository }}"
           ACTOR="${{ github.actor }}"
-          MESSAGE="${{ github.event.head_commit.message }}"
-          URL="${{ github.event.head_commit.url }}"
+          MESSAGE="${{ github.event.head_commit.message || '' }}"
+          URL="${{ github.event.head_commit.url || github.event.repository.html_url }}"
+          ROLE_ID="1319729041322016788"
 
+          # Construir el payload JSON con jq
           PAYLOAD=$(jq -n \
             --arg title "📦 Nuevo evento en $REPO" \
             --arg type "$EVENT_TYPE" \
             --arg actor "$ACTOR" \
             --arg message "$MESSAGE" \
             --arg url "$URL" \
-            --arg color "5814783" \
+            --arg role "<@&${ROLE_ID}>" \
+            --argjson color 5814783 \
             '{
+              content: "\($role) 🚨 Nuevo evento detectado:",
+              allowed_mentions: { parse: ["roles"] },
               embeds: [
                 {
                   title: $title,
-                  description: "**Tipo:** " + $type + "\n**Autor:** " + $actor + "\n**Mensaje:** " + $message,
+                  description: ("**Tipo:** " + $type + "\n**Autor:** " + $actor + "\n**Mensaje:** " + $message),
                   url: $url,
-                  color: ($color | tonumber)
+                  color: $color
                 }
               ]
             }')
 
+          # Enviar el mensaje a Discord
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "$PAYLOAD" \
-               ${{ secrets.DISCORD_WEBHOOK }}
+               "${{ secrets.DISCORD_WEBHOOK }}"
