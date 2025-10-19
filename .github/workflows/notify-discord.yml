@@ -1,4 +1,4 @@
-name: Notificar eventos a Discord
+name: 🚀 Notificar eventos a Discord
 
 on:
   push:
@@ -12,18 +12,29 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Enviar evento a Discord
+      - name: 📢 Enviar evento a Discord
         run: |
           EVENT_TYPE="${{ github.event_name }}"
           REPO="${{ github.repository }}"
           ACTOR="${{ github.actor }}"
-          MESSAGE="${{ github.event.head_commit.message || '' }}"
+          MESSAGE="${{ github.event.head_commit.message || 'Sin mensaje' }}"
           URL="${{ github.event.head_commit.url || github.event.repository.html_url }}"
           ROLE_ID="1319729041322016788"
 
+          # Elegir emoji según el tipo de evento
+          case "$EVENT_TYPE" in
+            push)        ICON="📦"; TITLE="Nuevo *push* en el repositorio" ;;
+            pull_request) ICON="🔀"; TITLE="Se creó o actualizó un *Pull Request*" ;;
+            issues)      ICON="🐛"; TITLE="Actividad en *Issues*" ;;
+            release)     ICON="🏷️"; TITLE="Nueva *Release* publicada" ;;
+            fork)        ICON="🍴"; TITLE="Alguien hizo un *Fork* del repo" ;;
+            watch)       ICON="⭐"; TITLE="Nuevo *Star* en el proyecto" ;;
+            *)           ICON="📣"; TITLE="Nuevo evento detectado" ;;
+          esac
+
           # Construir el payload JSON con jq
           PAYLOAD=$(jq -n \
-            --arg title "📦 Nuevo evento en $REPO" \
+            --arg title "$ICON $TITLE" \
             --arg type "$EVENT_TYPE" \
             --arg actor "$ACTOR" \
             --arg message "$MESSAGE" \
@@ -31,14 +42,20 @@ jobs:
             --arg role "<@&${ROLE_ID}>" \
             --argjson color 5814783 \
             '{
-              content: "🚨 Nuevo evento detectado: \($role)",
+              content: "🔔 **Notificación automática:** \($role)",
               allowed_mentions: { parse: ["roles"] },
               embeds: [
                 {
                   title: $title,
-                  description: ("**Tipo:** " + $type + "\n**Autor:** " + $actor + "\n**Mensaje:** " + $message),
+                  description: (
+                    "👤 **Autor:** " + $actor + "\n" +
+                    "🧩 **Evento:** " + $type + "\n" +
+                    "💬 **Mensaje:** " + $message
+                  ),
                   url: $url,
-                  color: $color
+                  color: $color,
+                  footer: { text: "🤖 GitHub Actions • Enviado automáticamente" },
+                  timestamp: (now | todate)
                 }
               ]
             }')
