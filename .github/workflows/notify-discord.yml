@@ -19,6 +19,7 @@ jobs:
           ACTOR="${{ github.actor }}"
           MESSAGE="${{ github.event.head_commit.message || '' }}"
           URL="${{ github.event.head_commit.url || github.event.repository.html_url }}"
+          ROLE_ID="1319729041322016788"
 
           # Construir el payload JSON con jq
           PAYLOAD=$(jq -n \
@@ -27,8 +28,11 @@ jobs:
             --arg actor "$ACTOR" \
             --arg message "$MESSAGE" \
             --arg url "$URL" \
+            --arg role "<@&${ROLE_ID}>" \
             --argjson color 5814783 \
             '{
+              content: "\($role) 🚨 Nuevo evento detectado:",
+              allowed_mentions: { parse: ["roles"] },
               embeds: [
                 {
                   title: $title,
