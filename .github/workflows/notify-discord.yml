@@ -19,6 +19,7 @@ jobs:
           ACTOR="${{ github.actor }}"
           MESSAGE="${{ github.event.head_commit.message || 'Sin mensaje' }}"
           URL="${{ github.event.head_commit.url || github.event.repository.html_url }}"
+          AVATAR="${{ github.event.sender.avatar_url }}"
           ROLE_ID="1319729041322016788"
 
           # Elegir emoji según el tipo de evento
@@ -42,6 +43,7 @@ jobs:
             --arg actor "$ACTOR" \
             --arg message "$MESSAGE" \
             --arg url "$URL" \
+            --arg avatar "$AVATAR" \
             --arg role "<@&${ROLE_ID}>" \
             --argjson color $COLOR \
             '{
@@ -57,6 +59,7 @@ jobs:
                   ),
                   url: $url,
                   color: $color,
+                  thumbnail: { url: $avatar },
                   footer: { text: "🤖 GitHub Actions • Enviado automáticamente" },
                   timestamp: (now | todate)
                 }
